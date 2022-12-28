@@ -7,9 +7,8 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection = getComputerChoice()) {
     let result;
     if (playerSelection === computerSelection) {
         result = 'It is a tie!';
@@ -18,14 +17,13 @@ function playRound(playerSelection, computerSelection) {
                (playerSelection === 'paper' && computerSelection === 'rock') || 
                (playerSelection === 'scissors' && computerSelection === 'paper'))
 {
-               result = 'You win! ${playerSelection} beats ${computerSelection}';
+               result = `You win! ${playerSelection} beats ${computerSelection}`;
     } else     {
-    result = 'You lose! ${computerSelection} beats ${computerSelection}';
+    result = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 
     return result;
 }
-        
         
 
 
